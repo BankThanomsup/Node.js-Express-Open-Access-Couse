@@ -1,26 +1,38 @@
 //Import module
 
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
-const path = require('path');
-const debug = require('debug')('app');
+const path = require("path");
+const debug = require("debug")("app");
 const chalk = require("chalk");
-const morgan = require('morgan');
+const morgan = require("morgan");
+const productRouter = express.Router;
 
+app.use(morgan("combined"));
 
-app.use(morgan('combined'));
+app.use(express.static(path.join(__dirname, "/public/")));
 
-app.use(express.static(path.join(__dirname,"/public/")))
+productRouter.route("/").get((req, res) => {
+    res.send("Hello World !! I'm Product")
+});
 
-app.get("/",(req,res) =>{
+productRouter.route("/").get((req, res) => {
+    res.send("Hello World !! I'm Product 1")
+});
 
-    res.render('index',{username:'Bankza55+', customers:["kitti","Kittikon","Kitty"]});
-})
+app.use("/products", productRouter);
 
-app.listen(PORT, ()=>{
-   debug("Listening on port" + chalk.red(" : " + PORT));
-})
+app.get("/", (req, res) => {
+  res.render("index", {
+    username: "Bankza55+",
+    customers: ["kitti", "Kittikon", "Kitty"],
+  });
+});
 
-app.set("views","./src/views");
-app.set("view engine" ,"ejs")
+app.listen(PORT, () => {
+  debug("Listening on port" + chalk.red(" : " + PORT));
+});
+
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
