@@ -8,13 +8,13 @@
 <body>
   
   <h1>Hello World</h1>
-  <a href="/products/<%=product.id%>"></a><% products.map((product)=>{ %>
-  <h4><%=product.productsTitle %></h4>
-      <p><%=product.productsDescription %></p>
-      <p>ราคา :<%=product.productPrice %> บาท</p>
-      <%})%>
+  <% products.map((product)=>{ %>
+  <h4>
+    <a href="/products/<%=product.id%>"></a><%=product.productsTitle %></h4>
+  <p><%=product.productsDescription %></p>
+  <p>ราคา :<%=product.productPrice %> บาท</p>
+  <%})%>
 </body>
 </html>
-                  
-        
-     
+
+
