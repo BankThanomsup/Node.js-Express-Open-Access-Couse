@@ -1,24 +1,19 @@
 //Import module
-
-
-const app = express();
-const PORT = process.env.PORT;
+const express = require("express");
 const path = require("path");
-
 const debug = require("debug")("app");
 const chalk = require("chalk");
 const morgan = require("morgan");
-const productRouter = require("./src/router/productsRouter")
+const productsRouter = require("./src/router/productsRouter")
 
+const app = express();
+const PORT = process.env.PORT;  
 app.use(morgan("combined"));
 app.use(express.static(path.join(__dirname, "/public/")));
-
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
-
-
-app.use("/products", productRouter);
+app.use("/products", productsRouter);
 
 app.get("/", (req, res) => {
   res.render("index", {
