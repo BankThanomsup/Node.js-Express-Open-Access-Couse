@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 0,
         "productsTitle": "น้ำยาล้างจาน",
         "productsDescription": "น้ำยาล้างจานสูตร 1 ดีเลิศ",
@@ -28,5 +29,4 @@
         "productsDescription": "น้ำยาล้างจานสูตร 5 ดีเยี่ยม",
         "productPrice": 95
     }
-
 ]
