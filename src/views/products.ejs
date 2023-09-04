@@ -10,7 +10,8 @@
   <h1>Hello World</h1>
   <% products.map((product)=>{ %>
   <h4>
-    <a href="/products/<%=product.id%>"></a><%=product.productsTitle %></h4>
+    <a href="/products/<%=product.id%>"><%=product.productsTitle %></a>
+  </h4>
   <p><%=product.productsDescription %></p>
   <p>ราคา :<%=product.productPrice %> บาท</p>
   <%})%>
