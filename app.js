@@ -23,7 +23,7 @@ productRouter.route("/1").get((req, res) => {
   res.send("Hello World !! I'm Product 1");
 });
 
-app.use("/Products", productRouter);
+app.use("/products", productRouter);
 
 app.get("/", (req, res) => {
   res.render("index", {
