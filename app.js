@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 //     res.send("Hello World !! I'm Product 1")
 // });
 
-// app.use("/products", productRouter);
+app.use("/Products", productRouter);
 
 app.get("/", (req, res) => {
   res.render("index", {username: "Bankza55+",customers: ["kitti", "Kittikon", "Kitty"],
