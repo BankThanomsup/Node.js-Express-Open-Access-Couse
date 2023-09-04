@@ -139,6 +139,13 @@
     <section id="features" class="ud-features">
       <div class="container">
         <h1>Hello World</h1>
+        <% 
+          products.map((product)=>{ %>
+            <h4><%=product.productTitle %></h4>
+            <p><%=product.productDescripation</p>
+            <%})%>
+                  
+        
       </div>
     </section>
    
